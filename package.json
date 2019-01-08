@@ -1,0 +1,42 @@
+{
+  "name": "go-libp2p-dep",
+  "version": "6.0.30",
+  "description": "Install the latest go-libp2p binary",
+  "leadMaintainer": "Vasco Santos <santos.vasco10@gmail.com>",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.0.0"
+  },
+  "scripts": {
+    "install": "node src/bin.js",
+    "test": "tape test/*.js | tap-spec",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libp2p/npm-go-libp2p-dep.git"
+  },
+  "dependencies": {
+    "go-platform": "^1.0.0",
+    "gunzip-maybe": "^1.4.1",
+    "request": "^2.88.0",
+    "tar-fs": "^1.16.3",
+    "unzip-stream": "^0.3.0"
+  },
+  "keywords": [
+    "libp2p",
+    "install"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/libp2p/npm-go-libp2p-dep/issues"
+  },
+  "homepage": "https://github.com/libp2p/npm-go-libp2p-dep",
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "standard": "^12.0.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
