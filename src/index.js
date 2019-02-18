@@ -41,7 +41,7 @@ function download (version, platform) {
     const url = `${distUrl}/ipfs/${libp2pVersions[version][platform]}`
 
     // Success callback wrapper
-    // go-ipfs contents are in 'go-ipfs/', so append that to the path
+    // go-libp2p contents are in 'go-libp2p/', so append that to the path
     const done = () => resolve({
       fileName: fileName,
       installPath
