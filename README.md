@@ -1,9 +1,12 @@
 Install go-libp2p from npm as a dependency of your project
 ========================================================
 
-[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://protocol.ai)
 [![](https://img.shields.io/badge/project-libp2p-yellow.svg?style=flat-square)](http://libp2p.io/)
 [![](https://img.shields.io/badge/freenode-%23libp2p-yellow.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23libp2p)
+[![Discourse posts](https://img.shields.io/discourse/https/discuss.libp2p.io/posts.svg)](https://discuss.libp2p.io)
+[![Dependency Status](https://david-dm.org/libp2p/npm-go-libp2p-dep.svg?style=flat-square)](https://david-dm.org/libp2p/npm-go-libp2p-dep)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 
 > Install the latest [go-libp2p](https://github.com/libp2p/go-libp2p/) binary from IPFS public gateway.
 
