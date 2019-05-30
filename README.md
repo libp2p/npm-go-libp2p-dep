@@ -59,12 +59,20 @@ $ go install ./...
 $ gox -osarch="linux/amd64 darwin/amd64 windows/amd64" github.com/libp2p/go-libp2p-daemon/p2pd
 ```
 
+- Rename each binary to p2pd in a different folder
+
+```
+$ mv p2pd_linux_amd64 p2pd
+$ mv p2pd_darwin_amd64 p2pd
+$ mv p2pd_windows_amd64.exe p2pd.exe
+```
+
 - Archive resulting binaries
 
 ```sh
-$ tar -cvzf go-libp2p-0.1.0-linux.tar.gz p2pd_linux_amd64
-$ tar -cvzf go-libp2p-0.1.0-mac.tar.gz p2pd_darwin_amd64
-$ zip go-libp2p-0.1.0-windows.zip p2pd_windows_amd64.exe
+$ tar -cvzf go-libp2p-0.1.0-linux.tar.gz p2pd
+$ tar -cvzf go-libp2p-0.1.0-mac.tar.gz p2pd
+$ zip go-libp2p-0.1.0-windows.zip p2pd.exe
 ```
 
 - Add to IPFS (a daemon should be running)
