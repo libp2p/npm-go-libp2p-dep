@@ -38,4 +38,41 @@ Can be specified in `package.json` with a field `go-libp2p.version`, eg:
 
 When a new `go-libp2p` version is released, it is necessary to create binaries for linux, windows and mac os. After this, those binaries should be added to ipfs and the `versions.js` file updated accordingly.
 
-Note: [gox](https://github.com/mitchellh/gox) can be used to generate binaries for all platforms.
+For generating binaries for all the platforms we have been using [gox](https://github.com/mitchellh/gox).
+
+An example flow for version 0.1.0:
+
+- Install and build `go-libp2p-daemon`
+
+```sh
+$ # in your GOPATH (for example inside go/src/github.com/libp2p)
+$ git clone https://github.com/libp2p/go-libp2p-daemon
+$ cd go-libp2p-daemon
+$ git checkout <release tag, e.g. v0.0.1>
+$ go get ./...
+$ go install ./...
+```
+
+- Generate the necessary binaries
+
+```sh
+$ gox -osarch="linux/amd64 darwin/amd64 windows/amd64" github.com/libp2p/go-libp2p-daemon/p2pd
+```
+
+- Archive resulting binaries
+
+```sh
+$ tar -cvzf go-libp2p-0.1.0-linux.tar.gz p2pd_linux_amd64
+$ tar -cvzf go-libp2p-0.1.0-mac.tar.gz p2pd_darwin_amd64
+$ zip go-libp2p-0.1.0-windows.zip p2pd_windows_amd64.exe
+```
+
+- Add to IPFS (a daemon should be running)
+
+```sh
+$ ipfs add go-libp2p-0.1.0-linux.tar.gz
+$ ipfs add go-libp2p-0.1.0-mac.tar.gz
+$ ipfs add go-libp2p-0.1.0-windows.zip
+```
+
+- Pin on IPFS bot
