@@ -67,6 +67,7 @@ function download (version, platform) {
 
     // Start
     process.stdout.write(`Platform: ${platform}\n`)
+    process.stdout.write(`Version: ${version}\n`)
     process.stdout.write(`Downloading: ${url}\n`)
     process.stdout.write(`Destination: ${installPath}\n`)
 
