@@ -2,6 +2,11 @@
 
 // map version to ipfs cid
 module.exports = {
+  'v0.11.0': {
+    'darwin': 'QmbRgQrwZFyR6cjwuN6dgSfadmr9KrLmM72hRJ1B3K6659',
+    'linux': 'QmW6hANCx63LR2Unb8TWwB7UkDC2SNKUV5QbaWzSyjsoPf',
+    'win32': 'QmW9zNiN8VL59UbC2DmStQoxdy7TTnZfNsTXBVSn9NR9Wy',
+  },
   'v0.8.1': {
     'darwin': 'QmSSvbrXjWNfTmTZ3Xe1jqpFXdo5iFxEn8EsviuDFTeUdy',
     'linux': 'QmZTzykGoDz16apo8fVJ7mBYfpyWnqnqwDaJgtC34UbttR',
