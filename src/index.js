@@ -11,6 +11,7 @@ const request = require('request')
 const tarFS = require('tar-fs')
 const unzip = require('unzip-stream')
 const pkg = require('./../package.json')
+const retry = require('p-retry')
 
 const libp2pVersions = require('./versions')
 
@@ -92,4 +93,17 @@ function download (version, platform) {
   })
 }
 
-module.exports = download
+module.exports = (version, platform) => {
+  return retry((attempt) => {
+    if (attempt > 1) {
+      console.info('Retry:', attempt)
+    }
+
+    return download(version, platform)
+  }, {
+    retries: process.env.GO_LIBP2P_DEP_DOWNLOAD_RETRIES || 10,
+    onFailedAttempt: (err) => {
+      console.info('Failed:', err.message)
+    }
+  })
+}
