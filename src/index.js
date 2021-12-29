@@ -36,10 +36,18 @@ function download (version, platform) {
 
     const isWindows = platform === 'win32'
 
+    let libp2pVersion = libp2pVersions[version]
+
+    if (!libp2pVersion) {
+      version = libp2pVersions.latest
+    }
+
+    libp2pVersion = libp2pVersions[libp2pVersions.latest]
+
     // Create the download url
     const fileExtension = isWindows ? '.zip' : '.tar.gz'
     const fileName = 'libp2p_' + version + fileExtension
-    const url = `${distUrl}/ipfs/${libp2pVersions[version][platform]}`
+    const url = `${distUrl}/ipfs/${libp2pVersion[platform]}`
 
     // Success callback wrapper
     // go-libp2p contents are in 'go-libp2p/', so append that to the path

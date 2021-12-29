@@ -2,6 +2,7 @@
 
 // map version to ipfs cid
 module.exports = {
+  latest: 'v0.11.0',
   'v0.11.0': {
     'darwin': 'QmbRgQrwZFyR6cjwuN6dgSfadmr9KrLmM72hRJ1B3K6659',
     'linux': 'QmW6hANCx63LR2Unb8TWwB7UkDC2SNKUV5QbaWzSyjsoPf',
