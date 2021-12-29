@@ -57,10 +57,15 @@ function download (version, platform) {
     })
 
     const unpack = (stream) => {
+      stream.on('error', (err) => {
+        reject(err)
+      })
+
       if (isWindows) {
         return stream.pipe(
           unzip
             .Extract({ path: installPath })
+            .on('error', (err) => reject(err))
             .on('close', done)
         )
       }
@@ -70,6 +75,7 @@ function download (version, platform) {
         .pipe(
           tarFS
             .extract(installPath)
+            .on('error', (err) => reject(err))
             .on('finish', done)
         )
     }
